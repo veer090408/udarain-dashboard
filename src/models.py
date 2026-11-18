@@ -109,7 +109,7 @@ def predict_next_hours(lat: float = -6.3645, lon: float = 106.8287, hours: int =
     with open(METRICS_PATH, "r") as f:
         feature_cols = json.load(f)["feature_cols"]
 
-    df_recent = fetch_open_meteo_current(lat=lat, lon=lon, past_days=2, forecast_days=1)
+    df_recent = fetch_open_meteo_current(lat=lat, lon=lon, past_days=2, forecast_days=2)
     now = pd.Timestamp.now(tz="Asia/Jakarta").tz_localize(None).floor("h")
 
     # Ambil data sampai jam sekarang sebagai konteks historis awal
